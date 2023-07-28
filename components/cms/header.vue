@@ -533,6 +533,7 @@
               </li>
             </ul>
             <button
+              @click="logOut()"
               class="flex items-center gap-3.5 py-4 px-6 text-sm font-medium duration-300 ease-in-out hover:text-primary"
             >
               <svg
@@ -568,4 +569,12 @@ const dropdownOpen = ref(false);
 const notifying = ref(false);
 const messages = ref(false);
 const navbar = useNavbar();
+const client = useSupabaseAuthClient();
+
+async function logOut() {
+  const { error } = await client.auth.signOut();
+  navigateTo({
+    path: "/auth/signin",
+  });
+}
 </script>
