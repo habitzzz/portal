@@ -138,12 +138,12 @@ const menu = ref({
         {
           id: 4,
           name: "Tambah Artikel",
-          url: "/cms/articles/add",
+          url: "/cms/articles/manage/add",
         },
         {
           id: 5,
           name: "Kategori Artikel",
-          url: "/cms/articles/categories",
+          url: "/cms/articles/manage/categories",
         },
       ],
     },

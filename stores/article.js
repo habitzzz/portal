@@ -1,7 +1,6 @@
-const supabase = useSupabaseClient();
-
 export const useArticle = defineStore('article', {
     state: () => ({
+        id:0,
         title: '',
         article: '',
         category: '',
@@ -10,11 +9,11 @@ export const useArticle = defineStore('article', {
     getters: {
         getState(state) {
             const {
-                title, article, category, listData
+                id, title, article, category, listData
             } = state;
 
             return {
-                title, article, category, listData
+                id, title, article, category, listData
             };
         },
     },
@@ -22,9 +21,5 @@ export const useArticle = defineStore('article', {
         changeState(nameState, value){
             this[nameState] = value;
         },
-        async dataArticle(){
-            const {data, error} = await supabase.from('articles').select();
-            this.listData = data;            
-        }
     },
 })
