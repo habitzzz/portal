@@ -88,11 +88,11 @@
               >
                 <ul class="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
                   <li v-for="sub in row.submenu" :key="sub.id">
-                    <a
+                    <NuxtLink
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                      href="index.html"
+                      :to="sub.url"
                       :class="page === row.submenu && '!text-white'"
-                      >{{ sub.name }}</a
+                      >{{ sub.name }}</NuxtLink
                     >
                   </li>
                 </ul>
@@ -133,7 +133,7 @@ const menu = ref({
         {
           id: 3,
           name: "Semua Artikel",
-          url: "/cms/articles/manage",
+          url: "/cms/articles",
         },
         {
           id: 4,

@@ -14,7 +14,7 @@
       <!-- ===== Header End ===== -->
 
       <!-- ===== Main Content Start ===== -->
-      <main>
+      <main class="bg-slate-100">
         <slot />
       </main>
     </div>
